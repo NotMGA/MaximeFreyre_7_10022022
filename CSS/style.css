@@ -1,0 +1,99 @@
+.red {
+  color: #d04f4f;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 46px;
+}
+
+.txt_logo {
+  font-size: 36px;
+}
+
+body {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.search {
+  background-color: #e7e7e7;
+  height: 50px;
+}
+
+.btn {
+  border: none;
+}
+
+.recipe_section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.recipe_section article {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 30%;
+  height: 364px;
+  background-color: #e7e7e7;
+  margin-top: 5%;
+  overflow: hidden;
+}
+
+.img_vide {
+  background-color: #c7bebe;
+  width: 100%;
+  height: 50%;
+}
+h2 {
+  font-size: 18px;
+}
+.sous_img,
+.sous_img_left {
+  width: 40%;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  height: 45%;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+.ingredient_txt {
+  font-weight: 700;
+}
+
+.ingredient {
+  display: flex;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ingredient label {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 7; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.timer_div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
