@@ -1,5 +1,15 @@
-.red {
+.red_logo {
   color: #d04f4f;
+}
+
+.blue_select {
+  background-color: #3282f7;
+}
+.red_select {
+  background-color: #ed6454;
+}
+.green_select {
+  background-color: #68d9a4;
 }
 header {
   display: flex;
@@ -33,7 +43,7 @@ body {
 .recipe_section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .recipe_section article {
@@ -96,4 +106,105 @@ label {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+}
+
+.btn_color {
+  height: 10px;
+  width: 10px;
+  margin-right: 1em;
+}
+
+.search_select {
+  display: flex;
+  height: 3em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search_color {
+  border-style: none;
+  color: white;
+  display: flex;
+  padding-left: 1em;
+  width: 80%;
+}
+
+.search_color::placeholder {
+  color: white;
+}
+
+#selection_all {
+  margin-top: 5%;
+  display: flex;
+}
+
+.selection {
+  width: 20%;
+  border-radius: 10px;
+  margin-right: 3%;
+  height: 100%;
+}
+
+.ingres {
+  display: none;
+  margin-left: 1em;
+  color: white;
+  flex-wrap: wrap;
+}
+.ustensils {
+  display: none;
+  margin-left: 1em;
+  color: white;
+  flex-wrap: wrap;
+}
+.app {
+  display: none;
+  margin-left: 1em;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.ingres label {
+  width: 33%;
+  cursor: pointer;
+}
+.ustensils label {
+  width: 33%;
+  cursor: pointer;
+}
+.app label {
+  width: 33%;
+  cursor: pointer;
+}
+
+.select_selection {
+  display: flex;
+  margin-top: 2%;
+}
+
+.selected {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 2%;
+  border-radius: 10px;
+  width: 7em;
+  height: 2.5em;
+  align-items: center;
+  color: white;
+}
+
+.blue {
+  background-color: #3282f7;
+}
+
+.red {
+  background-color: #d04f4f;
+}
+
+.green {
+  background-color: #68d9a4;
+}
+
+.select_selection input {
+  height: 20px;
 }

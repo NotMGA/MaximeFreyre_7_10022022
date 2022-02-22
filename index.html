@@ -11,8 +11,8 @@
 </head>
 <body>
     <Header>
-            <img class="logo red" src="/image/Vector.svg" alt="Logo">
-            <label class="red txt_logo" for="logo">Les petits plats</label>
+            <img class="logo red_logo" src="/image/Vector.svg" alt="Logo">
+            <label class="red_logo txt_logo" for="logo">Les petits plats</label>
         
     </Header>
     <main>
@@ -24,12 +24,43 @@
               </button>
             </div>
           </div>
+        <div class="select_selection">
+        </div>
+        <div id="selection_all">
+          <div class="selection blue_select" id="selection_ingre">
+            <div class="search_select">
+              <input type="text" id="search_ingre" class="blue_select search_color" placeholder="Ingredient"> 
+              <input type="image" id="btn_ingre" class="btn_color" alt="select" src="/image/select.svg">
+            </div>
+            <div class="ingres">
+            </div>
+          </div>
+          <div class="selection green_select" id="selection_app" > 
+            <div class="search_select">
+              <input type="text" id="search_app" class="green_select search_color" placeholder="Appareils"> 
+              <input type="image" id="btn_app" class="btn_color" alt="select" src="/image/select.svg">
+            </div>
+            <div class="app">
+
+            </div>
+          </div>
+          <div class="selection red_select" id="selection_ust">
+            <div class="search_select">
+              <input type="text" id="search_ust" class="red_select search_color" placeholder="Ustensils"> 
+              <input type="image" id="btn_ust" class="btn_color" alt="select" src="/image/select.svg">
+            </div>
+            <div class="ustensils">
+
+            </div>
+          </div>
+        </div>
         <div class="recipe_section"></div>
     </main>
     <script src="/recipes.js"></script>
     <script src="/Java/Factory/recette.js"></script>
     <script src="/Java/page/index.js"></script>
     <script src="/Java/Algo/search.js"></script>
+    <script src="/Java/Algo/select.js"></script>
     
 </body>
 </html>

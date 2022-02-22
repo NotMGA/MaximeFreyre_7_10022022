@@ -4,8 +4,8 @@ async function displayData(recipes)
     const recipeSection = document.querySelector(".recipe_section");
 
     recipes.forEach((recettes) => {
-        const photographerModel = displayrecette(recettes);
-        const recipeCardDOM = photographerModel.getrecetteDOM();
+        const recipeModel = displayrecette(recettes);
+        const recipeCardDOM = recipeModel.getrecetteDOM();
         recipeSection.appendChild(recipeCardDOM);
     });
 };
