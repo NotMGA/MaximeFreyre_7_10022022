@@ -5,8 +5,14 @@ ingres = document.querySelector(".ingres ")
 uste = document.querySelector(".ustensils")
 app =document.querySelector(".app")
 search_ingre = document.getElementById("search_ingre")
+search_ust = document.getElementById("search_ust")
+search_app = document.getElementById("search_app")
 var click = true;
+let selected_recipe = [];
 select_ingre(recipes);
+select_ust(recipes);
+select_ust(recipes)
+filter_selet(recipes)
 
 //button for ingreds
 btn_ingre.onclick = function(){
@@ -88,8 +94,6 @@ btn_ust.onclick = function(){
         document.querySelector("#selection_ust").style.width = "20%"
         document.getElementById("search_ust").disabled =false
         document.getElementById("search_ust").placeholder ="ustensils"
-        clearDataIngre(uste);
-        clearDataIngre(ingres);
         click = true;
     }
 
@@ -290,7 +294,7 @@ function addelements_app(e){
 
 // filter with the select 
 
-let selected_recipe = [];
+
 function filter_selet(tab_select){
     const elements_selected_ing = document.querySelectorAll(".label_ingre")
     const elements_selected_ust = document.querySelectorAll(".label_ust")
@@ -382,10 +386,86 @@ function filter_selet(tab_select){
 
 }
 
-// function search of the select 
+// function search of the select  ingre
 
 search_ingre.addEventListener("keyup",function(e){
     ingres.style.display = "flex";
     // console.log(document.querySelectorAll(".ingres > label"))
+
+        const list_ingre = document.querySelector(".ingres");
+        const search_ingre = document.getElementById("search_ingre").value.toLocaleLowerCase();
+        clearDataIngre(ingres)
+        selected_recipe.forEach((ingres) => {
+            const {name , ingredients ,time ,description } =ingres;
+            ingredients.forEach(ingre => {
+                const {ingredient ,unit ,quantity}= ingre;
+                if (ingredient.toLowerCase().includes(search_ingre))
+                {
+                    const ingre_txt = document.createElement('label');
+                ingre_txt.textContent= ingredient;
+                list_ingre.appendChild(ingre_txt)
+                }
+                
+            });
+        });
+        const add_ingre = document.querySelectorAll(".ingres > label")
+    add_ingre.forEach((label)=>
+    label.addEventListener("click",addelements_ingre)
+    )
+    
+    
+},false);
+
+// function search of the select ust
+
+search_ust.addEventListener("keyup",function(e){
+    uste.style.display = "flex";
+    // console.log(document.querySelectorAll(".ingres > label"))
+
+        const list_ust = document.querySelector(".ustensils");
+        const search_ust = document.getElementById("search_ust").value.toLocaleLowerCase();
+        clearDataIngre(uste)
+        selected_recipe.forEach((ingres) => {
+            const {name , ingredients ,time ,description ,ustensils} =ingres;
+                ustensils.forEach((usten)=> {
+                    if (usten.toLowerCase().includes(search_ust))
+                     {
+                        const ust_txt = document.createElement('label');
+                        ust_txt.textContent= usten;
+                        list_ust.appendChild(ust_txt)
+                    }
+                })
+        });
+        const add_ust = document.querySelectorAll(".ust > label")
+    add_ust.forEach((label)=>
+    label.addEventListener("click",addelements_ust)
+    )
+    
+    
+},false);
+
+// function search of the select app 
+
+search_app.addEventListener("keyup",function(e){
+    app.style.display = "flex";
+    // console.log(document.querySelectorAll(".ingres > label"))
+
+        const list_app = document.querySelector(".app");
+        const search_app = document.getElementById("search_app").value.toLocaleLowerCase();
+        clearDataIngre(app)
+        selected_recipe.forEach((ingres) => {
+            const {name , ingredients ,time ,description ,ustensils , appliance} =ingres;
+                    if (appliance.toLowerCase().includes(search_app))
+                     {
+                        const app_txt = document.createElement('label');
+                        app_txt.textContent= appliance;
+                        list_app.appendChild(app_txt)
+                    }
+        });
+        const add_ust = document.querySelectorAll(".ust > label")
+    add_ust.forEach((label)=>
+    label.addEventListener("click",addelements_ust)
+    )
+    
     
 },false);
