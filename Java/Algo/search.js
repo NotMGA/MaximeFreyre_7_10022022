@@ -1,7 +1,8 @@
 const recette = document.querySelectorAll("article");
 // let ingredient_var = [];
 let filter_recipe =[];
-document.querySelector(".btn").addEventListener("click" ,()=>{
+// document.querySelector(".btn").addEventListener("click" ,()=>{
+    document.getElementById("search_bar").addEventListener("keyup",function(e){
     const search_bar = document.getElementById("search_bar").value.toLowerCase();
      filter_recipe= recipes.filter(character =>{
         // console.log(character.ingredients[0].ingredient)
@@ -14,7 +15,7 @@ document.querySelector(".btn").addEventListener("click" ,()=>{
 
     // console.log(filter_recipe);
     clearData();
-    filter_selet();
+    filter_select();
     // displayData(selected_recipe);
     // displayData(filter_recipe);
     

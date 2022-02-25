@@ -12,7 +12,7 @@ let selected_recipe = [];
 select_ingre(recipes);
 select_ust(recipes);
 select_ust(recipes)
-filter_selet(recipes)
+filter_select(recipes)
 
 //button for ingreds
 btn_ingre.onclick = function(){
@@ -21,6 +21,7 @@ btn_ingre.onclick = function(){
         document.querySelector("#selection_ingre").style.width = "50%"
         document.getElementById("search_ingre").disabled =true
         document.getElementById("search_ingre").placeholder ="Rechercher un ingrédient"
+        btn_ingre.src="/image/up_select.svg"
         clearDataIngre(ingres);
         clearDataIngre(uste)
         if(selected_recipe.length != [0])
@@ -49,7 +50,8 @@ btn_ingre.onclick = function(){
     }
     else{
         ingres.style.display = "none";
-        document.querySelector("#selection_ingre").style.width = "20%"
+        btn_ingre.src="/image/select.svg"
+        document.querySelector("#selection_ingre").style.width = "14%"
         document.getElementById("search_ingre").disabled =false
         document.getElementById("search_ingre").placeholder ="ingrédient"
         click = true;
@@ -66,6 +68,7 @@ btn_ust.onclick = function(){
         document.querySelector("#selection_ust").style.width = "50%"
         document.getElementById("search_ust").disabled =true
         document.getElementById("search_ust").placeholder ="Rechercher un Ustensil"
+        btn_ust.src="/image/up_select.svg"
         if(selected_recipe.length != [0])
         {
             select_ingre(selected_recipe);
@@ -85,15 +88,19 @@ btn_ust.onclick = function(){
         const add_ust = document.querySelectorAll(".ustensils > label")
         add_ust.forEach((label)=>
         label.addEventListener("click",addelements_ust)
-        )
+        // paramcolor = "red";
+        // label.color= paramcolor;
+        // label.paramclass="label_ust")
         // end 
+        )
         click = false;
     }
     else{
         uste.style.display = "none";
-        document.querySelector("#selection_ust").style.width = "20%"
+        document.querySelector("#selection_ust").style.width = "14%"
         document.getElementById("search_ust").disabled =false
         document.getElementById("search_ust").placeholder ="ustensils"
+        btn_ust.src="/image/select.svg"
         click = true;
     }
 
@@ -107,6 +114,7 @@ btn_app.onclick = function(){
         document.querySelector("#selection_app").style.width = "50%"
         document.getElementById("search_app").disabled =true
         document.getElementById("search_app").placeholder ="Rechercher un Appareils"
+        btn_app.src="/image/up_select.svg"
         if(selected_recipe.length != [0])
         {
             select_ingre(selected_recipe);
@@ -136,12 +144,13 @@ btn_app.onclick = function(){
     }
     else{
         app.style.display = "none";
-        document.querySelector("#selection_app").style.width = "20%"
+        document.querySelector("#selection_app").style.width = "14%"
         document.getElementById("search_app").disabled =false
         document.getElementById("search_app").placeholder ="Appareils"
         clearDataIngre(uste);
         clearDataIngre(app);
         clearDataIngre(ingres);
+        btn_app.src="/image/select.svg"
         click = true;
     }
 
@@ -194,19 +203,10 @@ function clearDataIngre(ingres){
         }
 }
 
- //add elements ingredients up to the slect 
-
-
-    const add_ingre = document.querySelectorAll(".ingres > label")
-    add_ingre.forEach((label)=>
-    label.addEventListener("click",addelements_ingre)
-    )
-
-
 
 // add elements ingre up to the select
 
-function addelements_ingre(e){
+function addelements_ingre(e ){
     const elements_value = e.target.textContent
     const div_select_elem = document.createElement("div")
     const select_elem = document.createElement("label")
@@ -220,15 +220,15 @@ function addelements_ingre(e){
     div_select_elem.appendChild(select_elem)
     div_select_elem.appendChild(close);
     // delete the select creeat
-    const close_ingre = document.querySelectorAll(".selected > input")
-    filter_selet();
-    close_ingre.forEach((close)=>
-    close.addEventListener("click" ,function(e){
-        e.target.parentNode.remove();
-    filter_selet();
+    // const close_ingre = document.querySelectorAll(".selected > input")
+    // filter_select();
+    // close_ingre.forEach((close)=>
+    // close.addEventListener("click" ,function(e){
+    //     e.target.parentNode.remove();
+    filter_select();
 
-    })
-    )
+    // })
+    // )
     // console.log(e.target.textContent)
 } 
 
@@ -249,12 +249,12 @@ function addelements_ust(e){
     div_select_elem.appendChild(close);
     // delete the select creeat
     const close_ingre = document.querySelectorAll(".selected > input")
-    filter_selet();
+    filter_select();
     close_ingre.forEach((close)=>
     close.addEventListener("click" ,function(e){
         e.target.parentNode.remove();
         
-        filter_selet();
+        filter_select();
             
 
     })
@@ -279,12 +279,12 @@ function addelements_app(e){
     div_select_elem.appendChild(close);
     // delete the select creeat
     const close_ingre = document.querySelectorAll(".selected > input")
-    filter_selet();
+    filter_select();
     close_ingre.forEach((close)=>
     close.addEventListener("click" ,function(e){
         e.target.parentNode.remove();
         
-        filter_selet();
+        filter_select();
             
 
     })
@@ -295,7 +295,7 @@ function addelements_app(e){
 // filter with the select 
 
 
-function filter_selet(tab_select){
+function filter_select(tab_select){
     const elements_selected_ing = document.querySelectorAll(".label_ingre")
     const elements_selected_ust = document.querySelectorAll(".label_ust")
     const elements_selected_app = document.querySelectorAll(".label_app")
@@ -395,6 +395,8 @@ search_ingre.addEventListener("keyup",function(e){
         const list_ingre = document.querySelector(".ingres");
         const search_ingre = document.getElementById("search_ingre").value.toLocaleLowerCase();
         clearDataIngre(ingres)
+        btn_ingre.src="/image/up_select.svg"
+        document.querySelector("#selection_ingre").style.width = "20%"
         selected_recipe.forEach((ingres) => {
             const {name , ingredients ,time ,description } =ingres;
             ingredients.forEach(ingre => {
@@ -425,6 +427,8 @@ search_ust.addEventListener("keyup",function(e){
         const list_ust = document.querySelector(".ustensils");
         const search_ust = document.getElementById("search_ust").value.toLocaleLowerCase();
         clearDataIngre(uste)
+        btn_ust.src="/image/up_select.svg"
+        document.querySelector("#selection_ust").style.width = "20%"
         selected_recipe.forEach((ingres) => {
             const {name , ingredients ,time ,description ,ustensils} =ingres;
                 ustensils.forEach((usten)=> {
@@ -436,7 +440,7 @@ search_ust.addEventListener("keyup",function(e){
                     }
                 })
         });
-        const add_ust = document.querySelectorAll(".ust > label")
+        const add_ust = document.querySelectorAll(".ustensils > label")
     add_ust.forEach((label)=>
     label.addEventListener("click",addelements_ust)
     )
@@ -453,6 +457,8 @@ search_app.addEventListener("keyup",function(e){
         const list_app = document.querySelector(".app");
         const search_app = document.getElementById("search_app").value.toLocaleLowerCase();
         clearDataIngre(app)
+        btn_app.src="/image/up_select.svg"
+        document.querySelector("#selection_app").style.width = "20%"
         selected_recipe.forEach((ingres) => {
             const {name , ingredients ,time ,description ,ustensils , appliance} =ingres;
                     if (appliance.toLowerCase().includes(search_app))
@@ -462,10 +468,37 @@ search_app.addEventListener("keyup",function(e){
                         list_app.appendChild(app_txt)
                     }
         });
-        const add_ust = document.querySelectorAll(".ust > label")
-    add_ust.forEach((label)=>
-    label.addEventListener("click",addelements_ust)
+        const add_app = document.querySelectorAll(".app > label")
+    add_app.forEach((label)=>
+    label.addEventListener("click",addelements_app)
     )
     
     
 },false);
+
+//clear search bar ingre 
+
+search_ingre.addEventListener("blur",function(e){
+    btn_ingre.src="/image/select.svg"
+    ingres.style.display = "none";
+    search_ingre.value = "";
+    document.querySelector("#selection_ingre").style.width = "14%"
+},false)
+
+//clear search bar ust 
+
+search_ust.addEventListener("blur",function(e){
+    btn_ust.src="/image/select.svg"
+    uste.style.display = "none";
+    search_ust.value = "";
+    document.querySelector("#selection_ust").style.width = "14%"
+},false)
+
+// clear search bar app 
+
+search_app.addEventListener("blur",function(e){
+    btn_app.src="/image/select.svg"
+    app.style.display = "none";
+    search_app.value = "";
+    document.querySelector("#selection_app").style.width = "14%"
+},false)
