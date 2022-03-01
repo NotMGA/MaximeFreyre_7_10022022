@@ -181,6 +181,7 @@ function select_ingre(recipes){
             list_ingre.appendChild(ingre_txt)
         });
     });
+    
 }
 
 //function for the select : app
@@ -206,7 +207,7 @@ function clearDataIngre(ingres){
 
 // add elements ingre up to the select
 
-function addelements_ingre(e ){
+function addelements_ingre(e){
     const elements_value = e.target.textContent
     const div_select_elem = document.createElement("div")
     const select_elem = document.createElement("label")
@@ -220,15 +221,15 @@ function addelements_ingre(e ){
     div_select_elem.appendChild(select_elem)
     div_select_elem.appendChild(close);
     // delete the select creeat
-    // const close_ingre = document.querySelectorAll(".selected > input")
-    // filter_select();
-    // close_ingre.forEach((close)=>
-    // close.addEventListener("click" ,function(e){
-    //     e.target.parentNode.remove();
+    const close_ingre = document.querySelectorAll(".selected > input")
+    filter_select();
+    close_ingre.forEach((close)=>
+    close.addEventListener("click" ,function(e){
+        e.target.parentNode.remove();
     filter_select();
 
-    // })
-    // )
+    })
+    )
     // console.log(e.target.textContent)
 } 
 
@@ -410,11 +411,11 @@ search_ingre.addEventListener("keyup",function(e){
                 
             });
         });
+ 
         const add_ingre = document.querySelectorAll(".ingres > label")
-    add_ingre.forEach((label)=>
-    label.addEventListener("click",addelements_ingre)
-    )
-    
+        add_ingre.forEach((label)=>
+        label.addEventListener("click",addelements_ingre)
+        )
     
 },false);
 
