@@ -3,7 +3,7 @@ const recette = document.querySelectorAll("article");
 let filter_recipe =[];
 // document.querySelector(".btn").addEventListener("click" ,()=>{
     document.getElementById("search_bar").addEventListener("keyup",function(e){
-        if (document.getElementById("search_bar").value.length >= 3)
+        if (document.getElementById("search_bar").value.length >= 3 || document.getElementById("search_bar").value.length == 0 )
         {
             const search_bar = document.getElementById("search_bar").value.toLowerCase();
             filter_recipe= recipes.filter(character =>{
