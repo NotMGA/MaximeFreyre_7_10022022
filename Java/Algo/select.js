@@ -353,6 +353,12 @@ function filter_select(tab_select){
                 //return the recipe on selected_recipe
                 return true 
         })
+        if (selected_recipe.length == 0){
+            document.querySelector(".msg_vide").style.display = "flex";
+        }
+        else{
+         document.querySelector(".msg_vide").style.display = "none";
+         }
         
     // clear recipe show
     clearData();
@@ -431,7 +437,6 @@ search_ust.addEventListener("keyup",function(e){
 
 search_app.addEventListener("keyup",function(e){
     app.style.display = "flex";
-    // console.log(document.querySelectorAll(".ingres > label"))
 
         const list_app = document.querySelector(".app");
         const search_app = document.getElementById("search_app").value.toLocaleLowerCase();

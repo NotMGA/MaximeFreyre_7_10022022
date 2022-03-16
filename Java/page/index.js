@@ -17,11 +17,6 @@ async function clearData(){
 }
 
 async function init() {
-    // console.log(recipes);
-    // Récupère les datas des photographes
     displayData(recipes);
-    // user_information(photographers);
 };
-// export const photographerssss = "test" ;
-
 init();
