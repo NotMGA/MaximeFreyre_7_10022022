@@ -24,7 +24,7 @@ btn_ingre.onclick = function(){
         document.querySelector("#selection_ingre").style.width = "50%"
         document.getElementById("search_ingre").disabled =true
         document.getElementById("search_ingre").placeholder ="Rechercher un ingrédient"
-        btn_ingre.src="/image/up_select.svg"
+        btn_ingre.src="image/up_select.svg"
         clearDataIngre(ingres);
         clearDataIngre(uste)
         // use the good array
@@ -52,7 +52,7 @@ btn_ingre.onclick = function(){
     else{
         // reset the display 
         ingres.style.display = "none";
-        btn_ingre.src="/image/select.svg"
+        btn_ingre.src="image/select.svg"
         document.querySelector("#selection_ingre").style.width = "14%"
         document.getElementById("search_ingre").disabled =false
         document.getElementById("search_ingre").placeholder ="ingrédient"
@@ -72,7 +72,7 @@ btn_ust.onclick = function(){
         document.querySelector("#selection_ust").style.width = "50%"
         document.getElementById("search_ust").disabled =true
         document.getElementById("search_ust").placeholder ="Rechercher un Ustensil"
-        btn_ust.src="/image/up_select.svg"
+        btn_ust.src="image/up_select.svg"
         // use the good array
         if(selected_recipe.length != [0])
         {
@@ -102,7 +102,7 @@ btn_ust.onclick = function(){
         document.querySelector("#selection_ust").style.width = "14%"
         document.getElementById("search_ust").disabled =false
         document.getElementById("search_ust").placeholder ="ustensils"
-        btn_ust.src="/image/select.svg"
+        btn_ust.src="image/select.svg"
         search_ust.value = "";
         click_ust = true;
     }
@@ -117,7 +117,7 @@ btn_app.onclick = function(){
         document.querySelector("#selection_app").style.width = "50%"
         document.getElementById("search_app").disabled =true
         document.getElementById("search_app").placeholder ="Rechercher un Appareils"
-        btn_app.src="/image/up_select.svg"
+        btn_app.src="image/up_select.svg"
         if(selected_recipe.length != [0])
         {
             select_ingre(selected_recipe);
@@ -153,7 +153,7 @@ btn_app.onclick = function(){
         clearDataIngre(uste);
         clearDataIngre(app);
         clearDataIngre(ingres);
-        btn_app.src="/image/select.svg"
+        btn_app.src="image/select.svg"
         search_app.value = "";
         click_app = true;
     }
@@ -217,7 +217,7 @@ function addelements_ingre(e){
     const select_elem = document.createElement("label")
     const close = document.createElement("input")
     close.setAttribute("type", "image")
-    close.setAttribute("src", "/image/close.svg")
+    close.setAttribute("src", "image/close.svg")
     div_select_elem.setAttribute("class","blue selected")
     select_elem.innerHTML= elements_value;
     select_elem.setAttribute("class","label_ingre")
@@ -246,7 +246,7 @@ function addelements_ust(e){
     const select_elem = document.createElement("label")
     const close = document.createElement("input")
     close.setAttribute("type", "image")
-    close.setAttribute("src", "/image/close.svg")
+    close.setAttribute("src", "image/close.svg")
     div_select_elem.setAttribute("class","selected red")
     select_elem.innerHTML= elements_value;
     select_elem.setAttribute("class","label_ust")
@@ -276,7 +276,7 @@ function addelements_app(e){
     const select_elem = document.createElement("label")
     const close = document.createElement("input")
     close.setAttribute("type", "image")
-    close.setAttribute("src", "/image/close.svg")
+    close.setAttribute("src", "image/close.svg")
     div_select_elem.setAttribute("class","selected green")
     select_elem.innerHTML= elements_value;
     select_elem.setAttribute("class","label_app")
@@ -376,7 +376,7 @@ search_ingre.addEventListener("keyup",function(e){
         const search_ingre = document.getElementById("search_ingre").value.toLocaleLowerCase();
         // clear label under the select 
         clearDataIngre(ingres)
-        btn_ingre.src="/image/up_select.svg"
+        btn_ingre.src="image/up_select.svg"
         click_ingre = false;
         document.querySelector("#selection_ingre").style.width = "20%"
         // if ingredient of selected recipe include search bar value 
@@ -411,7 +411,7 @@ search_ust.addEventListener("keyup",function(e){
         const list_ust = document.querySelector(".ustensils");
         const search_ust = document.getElementById("search_ust").value.toLocaleLowerCase();
         clearDataIngre(uste)
-        btn_ust.src="/image/up_select.svg"
+        btn_ust.src="image/up_select.svg"
         click_ust = false;
         document.querySelector("#selection_ust").style.width = "20%"
         selected_recipe.forEach((ingres) => {
@@ -441,7 +441,7 @@ search_app.addEventListener("keyup",function(e){
         const list_app = document.querySelector(".app");
         const search_app = document.getElementById("search_app").value.toLocaleLowerCase();
         clearDataIngre(app)
-        btn_app.src="/image/up_select.svg"
+        btn_app.src="image/up_select.svg"
         click_app = false;
         document.querySelector("#selection_app").style.width = "20%"
         selected_recipe.forEach((ingres) => {

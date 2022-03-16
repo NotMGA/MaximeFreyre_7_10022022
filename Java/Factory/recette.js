@@ -12,7 +12,7 @@ function displayrecette (recipes){
         const clock = document.createElement('img');
         timer_div.setAttribute("class","timer_div");
         clock.setAttribute("class","clock");
-        clock.setAttribute("src","/image/clock.svg")
+        clock.setAttribute("src","image/clock.svg")
         descr.setAttribute("id","description")
         timer.setAttribute("id","time")
         description_time.setAttribute("class","sous_img")
